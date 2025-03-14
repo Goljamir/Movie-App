@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "movie_app",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/src/main.dart" // Add this line
+    },
+    {
+      "name": "movie_app (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile",
+      "program": "lib/src/main.dart" // Add this line
+    },
+    {
+      "name": "movie_app (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release",
+      "program": "lib/src/main.dart" // Add this line
+    }
+  ]
+}
