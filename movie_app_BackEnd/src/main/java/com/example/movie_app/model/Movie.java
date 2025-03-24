@@ -9,13 +9,13 @@ import java.util.List;
 public class Movie {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // Auto-increment ID
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  
     private Long id;
 
     private String title;
     private String description;
 
-    @ElementCollection  // Stores genres as a separate table
+    @ElementCollection  
     @CollectionTable(name = "movie_genres", joinColumns = @JoinColumn(name = "movie_id"))
     @Column(name = "genre")
     private List<String> genres;
@@ -32,8 +32,8 @@ public class Movie {
         this.releaseDate = releaseDate;
         this.imgUrl = imgUrl;
     }
-
-    // ✅ Getters
+//Getters
+ 
     public Long getId() {
         return id;
     }
@@ -58,7 +58,7 @@ public class Movie {
         return imgUrl;
     }
 
-    // ✅ Setters
+//Setters   
     public void setId(Long id) {
         this.id = id;
     }

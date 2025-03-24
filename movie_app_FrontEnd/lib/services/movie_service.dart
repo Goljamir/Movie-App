@@ -5,7 +5,7 @@ import 'fetched_movies.dart';
 class MovieService {
   final String baseUrl = 'http://localhost:8080/api/movies';
 
-  // Method to like a movie and save it to the backend
+  // Save to backend
   Future<void> likeMovie(FetchedMovies movie) async {
     final response = await http.post(
       Uri.parse('$baseUrl/like'),
@@ -29,7 +29,7 @@ class MovieService {
     }
   }
 
-  // Method to fetch all liked movies from the backend
+  // Fetch from backend
   Future<List<FetchedMovies>> fetchLikedMovies() async {
     final response = await http.get(Uri.parse('$baseUrl/liked'));
 

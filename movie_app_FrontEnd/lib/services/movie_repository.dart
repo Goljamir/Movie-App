@@ -13,8 +13,8 @@ class MovieRepository {
     "x-rapidapi-key": "0a68472523mshe8916967f149531p1c0bfejsn0eacef32c677",
     "x-rapidapi-host": "imdb236.p.rapidapi.com",
   };
-  List<FetchedMovies> _allMovies = []; // Keep IMDB movies
-  List<Movie> _favoriteMovies = []; // Spring-managed favorites
+  List<FetchedMovies> _allMovies = [];
+  List<Movie> _favoriteMovies = [];
   DateTime? _lastRequestTime;
   static const _minRequestInterval = Duration(seconds: 1);
 
@@ -124,7 +124,6 @@ class MovieRepository {
     }
   }
 
-  // Spring backend methods for favorites
   Future<List<Movie>> getFavorites() async {
     try {
       _favoriteMovies = await _springApi.getAllMovies();
@@ -158,7 +157,7 @@ class MovieRepository {
       return createdMovie;
     } catch (e) {
       print('Error adding to favorites: $e');
-      rethrow; // Rethrow to handle in UI
+      rethrow;
     }
   }
 
@@ -169,14 +168,14 @@ class MovieRepository {
       if (movieToRemove.id != null) {
         await _springApi.deleteMovie(movieToRemove.id!);
         print('Movie removed successfully');
-        // Refresh favorites list
+
         _favoriteMovies = await _springApi.getAllMovies();
         print(
             'Updated favorites list. Total favorites: ${_favoriteMovies.length}');
       }
     } catch (e) {
       print('Error removing from favorites: $e');
-      rethrow; // Rethrow to handle in UI
+      rethrow;
     }
   }
 }

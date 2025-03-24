@@ -32,9 +32,7 @@ class Movie {
       'title': title,
       'description': description,
       'genres': genres,
-      'releaseDate': releaseDate
-          .toIso8601String()
-          .split('T')[0], // Format as YYYY-MM-DD for LocalDate
+      'releaseDate': releaseDate.toIso8601String().split('T')[0],
       'imgUrl': imgUrl,
     };
   }

@@ -3,9 +3,7 @@ import 'package:http/http.dart' as http;
 import '../models/movie.dart';
 
 class ApiService {
-  // Update this URL to match your Spring backend URL
-  static const String baseUrl =
-      'http://10.0.2.2:8080/api'; // Use this for Android emulator
+  static const String baseUrl = 'http://10.0.2.2:8080/api';
 
   Future<List<Movie>> getAllMovies() async {
     try {
