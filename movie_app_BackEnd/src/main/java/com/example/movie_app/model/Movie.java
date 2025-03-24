@@ -32,7 +32,7 @@ public class Movie {
         this.releaseDate = releaseDate;
         this.imgUrl = imgUrl;
     }
-//Getters
+    //Getters
  
     public Long getId() {
         return id;
@@ -58,7 +58,7 @@ public class Movie {
         return imgUrl;
     }
 
-//Setters   
+    //Setters   
     public void setId(Long id) {
         this.id = id;
     }
